@@ -153,7 +153,7 @@ window.addEventListener('load', function() {
   <div id="text">
     <h1>Identicon</h1>
     <div><%=h base_url %>{string}</span></div>
-    <div><%=h base_url %>{string}?size=100 (size &lt;= <%=h MAX_SIZE %>)</div>
+    <div><%=h base_url %>{string}?size=180 (size &lt;= <%=h MAX_SIZE %>)</div>
     <% if info %>
       <div><% info.each do |k, v| %><%= k %>: <%=h v %><br /><% end %></div>
     <% end %>
