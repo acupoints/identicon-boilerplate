@@ -51,7 +51,7 @@ get '/' do
   erb :index, :locals => { :s => s, :base_url => base_url, :info => info }
 end
 
-get '/*' do
+get '/avatar/*' do
   str = params[:splat].first
   code = Quilt::Identicon.calc_code(str).to_s.gsub('-', '_')
   size = params[:s] ? params[:s].to_i : 0
