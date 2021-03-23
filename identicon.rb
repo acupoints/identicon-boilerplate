@@ -11,7 +11,7 @@ include ERB::Util
 
 TITLE    = 'Identicon'
 ICON_DIR = 'tmp/icons'
-MAX_SIZE = 800
+MAX_SIZE = 1024
 
 def cache_info
   {
@@ -35,7 +35,7 @@ end
 
 get '/' do
   base_url = [request.scheme,  '://', request.host, request.port == 80 ? '' : ':' + request.port.to_s, '/'].join('')
-  s = base_url + Digest::MD5.hexdigest(rand().to_s)
+  s = base_url + 'avatar/' + Digest::MD5.hexdigest(rand().to_s)
   info = {}
   if params.key? 'info'
     info = cache_info
