@@ -4,6 +4,5 @@ source "https://rubygems.org"
 gem 'thin'
 gem 'rack'
 gem 'sinatra'
-# gem 'rmagick'
-gem 'rmagick', '~> 4.2', '>= 4.2.2'
+gem 'rmagick'
 gem 'quilt'
