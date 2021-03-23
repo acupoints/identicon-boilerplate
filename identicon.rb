@@ -54,7 +54,7 @@ end
 get '/*' do
   str = params[:splat].first
   code = Quilt::Identicon.calc_code(str).to_s.gsub('-', '_')
-  size = params[:size] ? params[:size].to_i : 0
+  size = params[:s] ? params[:s].to_i : 0
 
   if size > 0 && size <= MAX_SIZE
     path = File.join ICON_DIR, "#{code}_#{size}"
