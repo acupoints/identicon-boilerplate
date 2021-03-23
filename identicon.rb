@@ -11,7 +11,7 @@ include ERB::Util
 
 TITLE    = 'Identicon'
 ICON_DIR = 'tmp/icons'
-MAX_SIZE = 500
+MAX_SIZE = 800
 
 def cache_info
   {
