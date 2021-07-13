@@ -1,4 +1,4 @@
-require 'rubygems'
+# require 'rubygems'
 require 'rake/clean'
 require 'fileutils'
 

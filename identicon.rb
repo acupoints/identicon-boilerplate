@@ -54,7 +54,7 @@ end
 get '/avatar/*' do
   str = params[:splat].first
   code = Quilt::Identicon.calc_code(str).to_s.gsub('-', '_')
-  size = params[:s] ? params[:s].to_i : 0
+  size = params[:size] ? params[:size].to_i : 164
 
   if size > 0 && size <= MAX_SIZE
     path = File.join ICON_DIR, "#{code}_#{size}"
@@ -152,13 +152,13 @@ window.addEventListener('load', function() {
 <body>
   <div id="text">
     <h1>Identicon</h1>
-    <div><%=h base_url %>{string}</span></div>
-    <div><%=h base_url %>{string}?size=180 (size &lt;= <%=h MAX_SIZE %>)</div>
+    <div><%=h base_url %>avatar/{string}</div>
+    <div><%=h base_url %>avatar/{string}?size=256 (size &lt;= <%=h MAX_SIZE %>)</div>
     <% if info %>
       <div><% info.each do |k, v| %><%= k %>: <%=h v %><br /><% end %></div>
     <% end %>
     <div class="powered">
-      powered by <a href="https://www.heroku.com/">www.heroku.com</a>
+      powered by <a href="https://fy1m.com/">fy1m.com</a>
     </div>
   </div>
   <div><img src="<%=h s %>" width="100%" height="100%" /></div>
